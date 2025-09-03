@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analiz Sonuçları</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Analiz Sonuçları</h1>
+        
+        <div> 
+        <h2> Seçilen dosya : <strong>{{filename}}</strong></h2> 
+        </div>
+        
+        <h1>NB Sonuçları</h1>
+        <div class="result-box">
+            <h2 style="color: {{ '#ff6347' if spam_probability > ham_probability else '#2ecc71' }}">
+                {{ 'SPAM' if spam_probability > ham_probability else 'HAM' }}
+            </h2>
+            
+            <h3>Spam Olasılığı:</h3>
+            <div class="probability-bar">
+                <div class="probability-fill spam-bar" style="width: {{ spam_probability }}%"></div>
+            </div>
+            <p>{{ '%.2f' % spam_probability }}%</p>
+            
+            <h3>Ham Olasılığı:</h3>
+            <div class="probability-bar">
+                <div class="probability-fill ham-bar" style="width: {{ ham_probability }}%"></div>
+            </div>
+            <p>{{ '%.2f' % ham_probability }}%</p>
+        </div>
+        
+        <h1>SVM Sonuçları</h1>
+        <div class="result-box">
+            <h2 style="color: {{ '#ff6347' if spam_probability2 > ham_probability2 else '#2ecc71' }}">
+                {{ 'SPAM' if spam_probability2 > ham_probability2 else 'HAM' }}
+            </h2>
+            
+            <h3>Spam Olasılığı:</h3>
+            <div class="probability-bar">
+                <div class="probability-fill spam-bar" style="width: {{ spam_probability2 }}%"></div>
+            </div>
+            <p>{{ '%.2f' % spam_probability2 }}%</p>
+            
+            <h3>Ham Olasılığı:</h3>
+            <div class="probability-bar">
+                <div class="probability-fill ham-bar" style="width: {{ ham_probability2 }}%"></div>
+            </div>
+            <p>{{ '%.2f' % ham_probability2 }}%</p>
+            </div>
+            <a href="/" class="back-button"> Ana Sayfaya Dön</a>
+        </div>
+        <div class = "container">
+            <h1>SVM ve NB Precision Değerleri</h1>
+        
+        <div class = "table">
+            <table>
+            <table align = "center">
+            <tr>
+              <th colspan = "2">SVM Algoritması</th>
+              <th colspan = "3">NB Algoritması</th>
+            </tr>
+            <tr>
+                <td> Ham mailler: %99</td>
+                <td> Spam mailler : %93</td>
+                <td> Ham mailler : %90</td>
+                <td> Spam mailler : %95</td>
+            </tr>
+            </table>
+        </table>
+        </div>
+    </div>
+    <div class = "container"> 
+        <h2>Kullanici geri bildirimi</h2>  
+    <form action="/feedback" method = "POST">
+        <input type = "hidden" name = "feedback" id = "feedback - input">
+        <button type = "submit" onclick="setFeedback('Evet, tahmin doğru')">Evet, tahmin doğru</button>
+        <button type = "submit" onclick="setFeedback('Hayır, tahmin yanlış')">Hayır, tahmin yanlış</button>
+        </form>
+    <div>
+    </div>
+</div>
+</body>
+</html>
