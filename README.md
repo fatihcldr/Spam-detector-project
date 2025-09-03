@@ -1,7 +1,9 @@
 🛡️ Spam Email Detection
+
 Machine Learning tabanlı email spam tespit sistemi. FastAPI ile geliştirilmiş web uygulaması.
 
 🎯 Proje Hakkında
+
 Bu proje, email dosyalarını analiz ederek spam/ham sınıflandırması yapan bir web uygulamasıdır. İki farklı ML algoritması (Naive Bayes ve SVM) kullanarak yüksek doğruluk oranı sağlar.
 Geliştirici: Fatih Mehmet Çıldır 
 
