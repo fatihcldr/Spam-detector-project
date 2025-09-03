@@ -31,16 +31,11 @@ def train_models():
     current_dir = Path(__file__).parent
     csv_file = current_dir / "data" / "cleaned_combined_data.csv"
     
-    # Alternatif olarak os.path kullanabilirsiniz:
-    # csv_file = os.path.join(os.path.dirname(__file__), "data", "cleaned_combined_data.csv")
-    
-    # Dosya var mı kontrol et
     if not csv_file.exists():
         raise FileNotFoundError(f"CSV dosyası bulunamadı: {csv_file}")
     
     df = pd.read_csv(csv_file)
     
-    # Metin ön işleme
     def preprocess_text(text):
         if isinstance(text, str):
             text = text.lower()
