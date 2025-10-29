@@ -7,7 +7,7 @@ Proje Hakkında
 Bu proje, email dosyalarını analiz ederek spam/ham sınıflandırması yapan bir web uygulamasıdır. İki farklı ML algoritması (Naive Bayes ve SVM) kullanarak yüksek doğruluk oranı sağlar.
 Geliştirici: Fatih Mehmet Çıldır 
 
-⚡ Özellikler
+Özellikler
 
 İki farklı ML modeli (Naive Bayes & SVM)
 .eml dosya formatı desteği
